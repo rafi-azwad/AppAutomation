@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class TestRunner.AppRunnerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class TestRunner.AppRunnerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/TestRunner.html">TestRunner</a> &gt; AppRunnerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2m1.32s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">runScenario[0](&quot;user login with valid data&quot;, &quot;Optional[App Automation]&quot;)</td>
+<td class="success">34.170s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">runScenario[1](&quot;Make Payment with valid data&quot;, &quot;Optional[Make Payment]&quot;)</td>
+<td class="success">30.426s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">runScenario[2](&quot;Mortgage Request with valid Data&quot;, &quot;Optional[Mortgage Request]&quot;)</td>
+<td class="success">44.456s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">runScenario[3](&quot;Add Expense and Logout&quot;, &quot;Optional[Expense Report]&quot;)</td>
+<td class="success">12.263s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@test1
+Scenario Outline: user login with valid data # src/test/resources/Features/appLogin.feature:12
+  Given user in the page                     # AppStepDefination.LoginStepDefination.userInThePage()
+  When user enter 'company' and 'company'    # AppStepDefination.LoginStepDefination.userEnterUsernameAndPassword(java.lang.String,java.lang.String)
+  And click login button                     # AppStepDefination.LoginStepDefination.clickLoginButton()
+Successful message: Your balance is: 100.00$
+  Then successfully open home page           # AppStepDefination.LoginStepDefination.successfullyOpenHomePage()
+
+@test2
+Scenario Outline: Make Payment with valid data  # src/test/resources/Features/appMakePayment.feature:13
+  Given user in the make payment page           # AppStepDefination.MakePaymentStepDefination.userInTheMakePaymentPage()
+  When user enter '01677156262' 'rafi' and '10' # AppStepDefination.MakePaymentStepDefination.userEnterPhoneNameAndAmount(java.lang.String,java.lang.String,java.lang.String)
+  And select the country name                   # AppStepDefination.MakePaymentStepDefination.selectTheCountryName()
+  And click send payment button                 # AppStepDefination.MakePaymentStepDefination.clickSendPaymentButton()
+Successfully go to home page
+  Then successfully make payment                # AppStepDefination.MakePaymentStepDefination.successfullyMakePayment()
+
+@test3
+Scenario Outline: Mortgage Request with valid Data                             # src/test/resources/Features/appMortgage.feature:14
+  Given user in mortgage request page                                          # AppStepDefination.MortgageStepDefination.userInMortgageRequestPage()
+  When user enter 'Rafi' 'Azwad'  '23' 'Dhaka' and 'Mymensingh'                # AppStepDefination.MortgageStepDefination.userEnterFirstNameLastNameAgeAddressAndAddress(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+  And select country name                                                      # AppStepDefination.MortgageStepDefination.selectCountryName()
+  And click next button                                                        # AppStepDefination.MortgageStepDefination.clickNextButton()
+  And select type of loan number of years type of occupation and yearly income # AppStepDefination.MortgageStepDefination.selectTypeOfLoanNumberOfYearsTypeOfOccupationAndYearlyIncome()
+  And click save button                                                        # AppStepDefination.MortgageStepDefination.clickSaveButton()
+Sucessfully back to home page
+  Then successfully back to home page                                          # AppStepDefination.MortgageStepDefination.successfullyBackToHomePage()
+
+@test4
+Scenario: Add Expense and Logout                 # src/test/resources/Features/expenseReport.feature:3
+  Given user in expense report page              # AppStepDefination.ExpenseStepDefination.userInExpenseReportPage()
+  When click add button successfully add expense # AppStepDefination.ExpenseStepDefination.clickAddButtonSuccessfullyAddExpense()
+  And click back button and go back home page    # AppStepDefination.ExpenseStepDefination.clickBackButtonAndGoBackHomePage()
+  Then click logout                              # AppStepDefination.ExpenseStepDefination.clickLogout()
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Mar 4, 2023 11:41:56 AM</p>
+</div>
+</div>
+</body>
+</html>

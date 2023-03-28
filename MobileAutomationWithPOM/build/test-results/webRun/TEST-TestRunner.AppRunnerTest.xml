@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestRunner.AppRunnerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-03-04T05:39:54" hostname="DESKTOP-ACI7R7L" time="121.317">
+  <properties/>
+  <testcase name="runScenario[0](&quot;user login with valid data&quot;, &quot;Optional[App Automation]&quot;)" classname="TestRunner.AppRunnerTest" time="34.17"/>
+  <testcase name="runScenario[1](&quot;Make Payment with valid data&quot;, &quot;Optional[Make Payment]&quot;)" classname="TestRunner.AppRunnerTest" time="30.426"/>
+  <testcase name="runScenario[2](&quot;Mortgage Request with valid Data&quot;, &quot;Optional[Mortgage Request]&quot;)" classname="TestRunner.AppRunnerTest" time="44.456"/>
+  <testcase name="runScenario[3](&quot;Add Expense and Logout&quot;, &quot;Optional[Expense Report]&quot;)" classname="TestRunner.AppRunnerTest" time="12.263"/>
+  <system-out><![CDATA[
+@test1
+Scenario Outline: user login with valid data # src/test/resources/Features/appLogin.feature:12
+  Given user in the page                     # AppStepDefination.LoginStepDefination.userInThePage()
+  When user enter 'company' and 'company'    # AppStepDefination.LoginStepDefination.userEnterUsernameAndPassword(java.lang.String,java.lang.String)
+  And click login button                     # AppStepDefination.LoginStepDefination.clickLoginButton()
+Successful message: Your balance is: 100.00$
+  Then successfully open home page           # AppStepDefination.LoginStepDefination.successfullyOpenHomePage()
+
+@test2
+Scenario Outline: Make Payment with valid data  # src/test/resources/Features/appMakePayment.feature:13
+  Given user in the make payment page           # AppStepDefination.MakePaymentStepDefination.userInTheMakePaymentPage()
+  When user enter '01677156262' 'rafi' and '10' # AppStepDefination.MakePaymentStepDefination.userEnterPhoneNameAndAmount(java.lang.String,java.lang.String,java.lang.String)
+  And select the country name                   # AppStepDefination.MakePaymentStepDefination.selectTheCountryName()
+  And click send payment button                 # AppStepDefination.MakePaymentStepDefination.clickSendPaymentButton()
+Successfully go to home page
+  Then successfully make payment                # AppStepDefination.MakePaymentStepDefination.successfullyMakePayment()
+
+@test3
+Scenario Outline: Mortgage Request with valid Data                             # src/test/resources/Features/appMortgage.feature:14
+  Given user in mortgage request page                                          # AppStepDefination.MortgageStepDefination.userInMortgageRequestPage()
+  When user enter 'Rafi' 'Azwad'  '23' 'Dhaka' and 'Mymensingh'                # AppStepDefination.MortgageStepDefination.userEnterFirstNameLastNameAgeAddressAndAddress(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+  And select country name                                                      # AppStepDefination.MortgageStepDefination.selectCountryName()
+  And click next button                                                        # AppStepDefination.MortgageStepDefination.clickNextButton()
+  And select type of loan number of years type of occupation and yearly income # AppStepDefination.MortgageStepDefination.selectTypeOfLoanNumberOfYearsTypeOfOccupationAndYearlyIncome()
+  And click save button                                                        # AppStepDefination.MortgageStepDefination.clickSaveButton()
+Sucessfully back to home page
+  Then successfully back to home page                                          # AppStepDefination.MortgageStepDefination.successfullyBackToHomePage()
+
+@test4
+Scenario: Add Expense and Logout                 # src/test/resources/Features/expenseReport.feature:3
+  Given user in expense report page              # AppStepDefination.ExpenseStepDefination.userInExpenseReportPage()
+  When click add button successfully add expense # AppStepDefination.ExpenseStepDefination.clickAddButtonSuccessfullyAddExpense()
+  And click back button and go back home page    # AppStepDefination.ExpenseStepDefination.clickBackButtonAndGoBackHomePage()
+  Then click logout                              # AppStepDefination.ExpenseStepDefination.clickLogout()
+]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>
