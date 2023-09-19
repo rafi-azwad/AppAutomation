@@ -53,7 +53,12 @@ Run cmd: adb (check successfully setup?)
 * For Package and activity name 
 --> Run cmd: adb shell >> dumpsys window | grep -E "mCurrentFocus|mFocusedApp" [Search Google "mfocus adb"]
 
-**Session Not created exception
+* Search "Pointer Location" from your mobile for "TouchAction" point
+
+ ***Session Not created exception [Original error: The instrumentation process cannot be initialized]
+
 Run cmd: adb uninstall io.appium.settings
 
-* Search "Pointer Location" from your mobile for "TouchAction" point
+adb uninstall io.appium.uiautomator2.server
+
+adb uninstall io.appium.uiautomator2.server.test
